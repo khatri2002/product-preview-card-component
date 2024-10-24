@@ -1,0 +1,132 @@
+// Primary Colors
+$dark-cyan: hsl(158, 36%, 37%);
+$cream-color: hsl(30, 38%, 92%);
+
+// Neutral Colors
+$very-dark-blue: hsl(212, 21%, 14%);
+$dark-grayish-blue-color: hsl(228, 12%, 48%);
+$white-color: hsl(0, 0%, 100%);
+
+// Breakpoints
+$small: 640px;
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    .container {
+        background-color: $cream-color;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .card {
+            background-color: $white-color;
+            width: min(36rem, 90vw);
+            display: flex;
+            border-radius: 10px;
+
+            .desktop-img {
+                width: 50%;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+
+            .mobile-img {
+                display: none;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+            }
+
+            .content {
+                padding: max(2vw, 1.7rem);
+
+                .text-montserrat {
+                    font-family: "Montserrat", sans-serif;
+                }
+
+                .text-fraunces {
+                    font-family: "Fraunces", serif;
+                }
+
+                .tag {
+                    text-transform: uppercase;
+                    letter-spacing: 4.5px;
+                    font-size: 0.8rem;
+                    color: $dark-grayish-blue-color;
+                }
+
+                .title {
+                    margin-bottom: 0;
+                    line-height: 2.1rem;
+                    color: $very-dark-blue;
+                }
+
+                .desc {
+                    color: $dark-grayish-blue-color;
+                    font-size: 0.9rem;
+                    line-height: 1.5rem;
+                    margin-block: 1.5rem;
+                }
+
+                .price-container {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1rem;
+
+                    .price-main {
+                        color: $dark-cyan;
+                        font-size: 2rem;
+                        margin-block: 0;
+                    }
+
+                    .price-strikethrough {
+                        color: $dark-grayish-blue-color;
+                        text-decoration: line-through;
+                        font-size: 0.8rem;
+                    }
+                }
+
+                .cart-btn {
+                    background-color: $dark-cyan;
+                    border: none;
+                    color: $white-color;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    column-gap: 0.7rem;
+                    padding-block: 0.9rem;
+                    border-radius: 7px;
+                    margin-top: 1.2rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition-property: background-color;
+                    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                    transition-duration: 150ms;
+
+                    &:hover {
+                        background-color: hsl(158, 36%, 17%) ;
+                    }
+                }
+            }
+
+            @media screen and (width <= $small) {
+                flex-direction: column;
+
+                .desktop-img {
+                    display: none;
+                }
+
+                .mobile-img {
+                    display: block;
+                }
+            }
+        }
+    }
+}
